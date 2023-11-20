@@ -68,6 +68,40 @@ ps -ef | grep файл_который_мы_запустили.js
 kill -9 {numberPID}
 ```
 
+## Запуск сервиса NodeJS + package.json (TypeScript)
+
+От предыдущего варианта отличается только конфиг файл. Команды для работы с сервисом буду прежними.
+
+Содержимое `название_сервиса.service`:
+
+```ini
+[Unit]
+Description=description
+[Service]
+# ExecStart=путь_до_ноды путь_до_yarn команда_из_package.json
+ExecStart=/root/node/bin/node /root/node/bin/.yarn/yarn start
+
+# путь до папки проекта:
+WorkingDirectory=/root/app/my-app/
+
+# Если используем type:module раскомментировать след строчку:
+# Environment=NODE_OPTIONS='--experimental-import-meta-resolve'
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=dollar-tracker-v3
+```
+
+Содержимое `package.json`:
+
+```json
+{
+  "scripts": {
+    "start": "yarn ts-node src/index.ts"
+  }
+}
+```
+
 ## Статья на medium.com
 
 [ссылка на статью](https://natancabral.medium.com/run-node-js-service-with-systemd-on-linux-42cfdf0ad7b2)
