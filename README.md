@@ -69,3 +69,5 @@ kill -9 {numberPID}
 ## Статья на medium.com
 
 [ссылка на статью](https://natancabral.medium.com/run-node-js-service-with-systemd-on-linux-42cfdf0ad7b2)
+
+[Подробное описание всех пунктов конфиг файла](https://habr.com/ru/companies/slurm/articles/255845/)
