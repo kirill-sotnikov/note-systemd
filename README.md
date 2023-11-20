@@ -1,5 +1,7 @@
 # Systemd
 
+![pic](https://miro.medium.com/v2/resize:fit:720/format:webp/1*Za_VipsuGjbjm-xN3UMfTw.gif)
+
 ## Настройка сервиса NodeJS
 
 1. Создаем файл с названием `название_сервиса.service` в `/etc/systemd/system/`
